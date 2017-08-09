@@ -11,3 +11,23 @@
   list-style-type: none;
 
 }
+
+.productCard{
+  display: flex;
+  border-style: dashed;
+  border-color:  red;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.productCard > img{
+  display: flex;
+  margin: 10px;
+  width: 90%;
+}
+.textItems{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+}

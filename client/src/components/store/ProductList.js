@@ -8,9 +8,11 @@ const ProductList = (props) => {
       {
         props.products.map((product, index) => (
           <div className='productCard'>
+            <div className="textItems">
             <h3>{ product.name }</h3>
-            <img src={ product.image } />
             <p>{ product.price }</p>
+            </div>
+            <img src={ product.image } />
           </div>
         ))
       }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Faker from 'faker';
 import { Store, ProductList } from '../../components';
-
+import './StoreContainer.css';
 
 class StoreContainer extends React.Component {
 
