@@ -1,0 +1,13 @@
+.Nav-Bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+
+}
+
+.Nav-Bar > li{
+  font-size: 12px;
+  list-style-type: none;
+
+}

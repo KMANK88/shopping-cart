@@ -1,34 +1,43 @@
 import React from 'react';
-import {Store} from '../../components';
+import Faker from 'faker';
+import { Store, ProductList } from '../../components';
 
-class StoreContainer extends React.Component{
+
+class StoreContainer extends React.Component {
 
   state = {
-    title: undefined
+    title: 'Hellow from Store Container!',
+    products: null
   }
 
-  componentDidMount(){
-    this.setTitle();
-  }
-  setTitle = () =>{
-    setTimeout (() => {
-      this.setState({title: "Store"})
-    },2000)
+  componentWillMount() {
+    this.fetchFakeProducts();
   }
 
+  fetchFakeProducts = () => {
+    const productsArray = [];
 
-  render(){
-    return(
+    for(let i = 0; i < 10; i +=1 ) {
+      productsArray.push({
+        name: Faker.commerce.productName(),
+        price: Faker.commerce.price(),
+        image: Faker.random.image()
+      })
+    }
+    this.setState({ products: productsArray });
+  }
+
+  render () {
+
+    return (
       <div>
-      {
-        this.state.title
-        ? <Store title={"this is Store Container title"} />
-        : <h1> Waiting for Store Title</h1>
-      }
+        <Store title={ this.state.title } />
+        <ProductList products={ this.state.products } />
       </div>
     )
-  }
-}
 
+  }
+
+}
 
 export default StoreContainer;
