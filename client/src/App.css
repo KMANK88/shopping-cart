@@ -2,32 +2,35 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-
-
+  background-color: cyan;
+  border-radius: 10px;
+  padding: 10px;
 }
-
 .Nav-Bar > li{
   font-size: 12px;
   list-style-type: none;
-
+  color: red;
+}
+.productList{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .productCard{
   display: flex;
   border-style: dashed;
   border-color:  red;
+  width: calc(33.33333% - 20px);
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-around;
+  margin: .5%;
 }
 
 .productCard > img{
   display: flex;
-  margin: 10px;
-  width: 90%;
-}
-.textItems{
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  margin: 25px;
   width: 90%;
 }

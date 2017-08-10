@@ -1,38 +1,56 @@
 import React from 'react';
 import Faker from 'faker';
-import { Store, ProductList } from '../../components';
-import './StoreContainer.css';
+import Layout from '../../Layout';
 
 class StoreContainer extends React.Component {
 
   state = {
-    title: 'Hellow from Store Container!',
-    products: null
+    title: 'Products',
+    products: undefined,
+    cart: []
   }
-
-  componentWillMount() {
-    this.fetchFakeProducts();
-  }
-
-  fetchFakeProducts = () => {
-    const productsArray = [];
-
-    for(let i = 0; i < 10; i +=1 ) {
-      productsArray.push({
+  componentDidMount() {
+    let tempProducts = [];
+    for (var i = 0; i < 10; i++) {
+      let prod = {
         name: Faker.commerce.productName(),
         price: Faker.commerce.price(),
-        image: Faker.random.image()
-      })
+        image: Faker.image.image(),
+        id: i
+      }
+      tempProducts.push(prod)
     }
-    this.setState({ products: productsArray });
+
+    //i had to pass a callback function to setState because otherwise
+    this.setState({ products: tempProducts })
+  }
+
+  addToCart = (product) => {
+    let tempCart = this.state.cart;
+    tempCart.push(product);
+    this.setState({ cart: tempCart });
+    alert(`${product.name} was added to cart`)
+  }
+
+/* Create a function that removes a product from the cart */
+  removeFromCart = (product) => {
+    let tempCart = this.state.cart;
   }
 
   render () {
-
+    console.log("Cart length: ", this.state.cart.length )
     return (
       <div>
-        <Store title={ this.state.title } />
-        <ProductList products={ this.state.products } />
+        <store title={ this.state.title } />
+        {
+          this.state.products
+          ? <Layout
+          products={ this.state.products }
+          addToCart={ this.addToCart }
+          cart = { this.state.cart }
+          />
+          : <h1>Products Loading</h1>
+        }
       </div>
     )
 

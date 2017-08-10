@@ -1,31 +1,26 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+const NavBar = (props) => {
+  console.log(props);
+  return (
+      <nav className='navContainer boxShadow'>
 
-const styles = {
-  active: {
-    backgroundColor: "whites"
-  },
-  inactive: {
-    backgroundColor:  "white"
-  }
-}
-
-
-const NavBar = () => {
-    const isActive = true;
-
-  return(
-    <div>
-      <nav style={ isActive ? styles.active : styles.inactive}>
         <div>
-          <ul className="Nav-Bar">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/my-about-page">About</Link></li>
-            <li><Link to="/my-shop-page">Shop</Link></li>
-          </ul>
+          <h1>{ props.title }</h1>
         </div>
+
+        <div>
+
+          {
+
+            //this dynamically maps all of the links for our nav bar
+            props.navBarLinks.map((item, index) => <Link to={'/' + item } key={ index } >{ item }</Link> )
+          }
+
+          <Link to='/cart'>{ props.cartCount }</Link>
+        </div>
+
       </nav>
-    </div>
   )
 }
 
