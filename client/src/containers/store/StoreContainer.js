@@ -7,7 +7,8 @@ class StoreContainer extends React.Component {
   state = {
     title: 'Products',
     products: undefined,
-    cart: []
+    cart: [],
+    user: null,
   }
   componentDidMount() {
     let tempProducts = [];
@@ -22,7 +23,7 @@ class StoreContainer extends React.Component {
     }
 
     //i had to pass a callback function to setState because otherwise
-    this.setState({ products: tempProducts })
+    this.setState({ products: tempProducts, user: this.createUser() })
   }
 
   addToCart = (product) => {
@@ -37,7 +38,21 @@ class StoreContainer extends React.Component {
     let tempCart = this.state.cart;
   }
 
+  createUser= () => {
+    const user = {
+      fName: Faker.name.firstName(),
+      lName: Faker.name.lastName(),
+      email: Faker.internet.email(),
+      avatar: Faker.internet.avatar()
+    }
+    return user;
+  }
+
   render () {
+    let totalPrice = 0;
+    for(let i=0; i< this.state.cart.length; i++){
+      totalPrice+= parseFloat(this.state.cart[i].price);
+    }
     console.log("Cart length: ", this.state.cart.length )
     return (
       <div>
@@ -48,6 +63,9 @@ class StoreContainer extends React.Component {
           products={ this.state.products }
           addToCart={ this.addToCart }
           cart = { this.state.cart }
+          totalPrice={totalPrice.toFixed(2)}
+          user={this.state.user}
+
           />
           : <h1>Products Loading</h1>
         }

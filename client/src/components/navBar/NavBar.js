@@ -3,13 +3,13 @@ import {Link} from 'react-router-dom';
 const NavBar = (props) => {
   console.log(props);
   return (
-      <nav className='navContainer boxShadow'>
+      <nav className='MainContainer'>
 
-        <div>
+        <div className="title">
           <h1>{ props.title }</h1>
         </div>
 
-        <div>
+        <div className="Nav-Bar">
 
           {
 

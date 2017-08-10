@@ -10,7 +10,9 @@ class NavBarContainer extends React.Component {
 
     render() {
       return (
+      <div>
         <NavBar title={ this.state.title } navBarLinks={ this.state.navBarLinks } cartCount={ this.props.cartCount }/>
+      </div>
       )
     }
 }
