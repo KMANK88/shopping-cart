@@ -5,7 +5,7 @@ const Profile = (props) => {
     <div>
       <h1> {props.user.fName}</h1>
       <h2> {props.user.lName}</h2>
-      <img src={props.user.avatar}/>
+      <img alt="" src={props.user.avatar}/>
       <h2> {props.user.email}</h2>
     </div>
   )

@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 const NavBar = (props) => {
-  console.log(props);
   return (
       <nav className='MainContainer'>
 
@@ -17,7 +16,8 @@ const NavBar = (props) => {
             props.navBarLinks.map((item, index) => <Link to={'/' + item } key={ index } >{ item }</Link> )
           }
 
-          <Link to='/cart'>{ props.cartCount }</Link>
+          <Link to='/cart'>{ props.cartCount} </Link>
+          <h3>${props.totalPrice}</h3>
         </div>
 
       </nav>

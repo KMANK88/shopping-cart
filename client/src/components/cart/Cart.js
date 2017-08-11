@@ -2,11 +2,7 @@ import React from 'react';
 import CartItem from './CartItem';
 
 const Cart = (props) => {
-
-  console.log("From cart:", props.cart);
-
   return (
-
     <div>
       {
         props.cart.length > 0 ?
@@ -17,7 +13,6 @@ const Cart = (props) => {
 
       }
     </div>
-
   )
 }
 

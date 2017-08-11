@@ -30,12 +30,11 @@ class StoreContainer extends React.Component {
     let tempCart = this.state.cart;
     tempCart.push(product);
     this.setState({ cart: tempCart });
-    alert(`${product.name} was added to cart`)
   }
 
 /* Create a function that removes a product from the cart */
   removeFromCart = (product) => {
-    let tempCart = this.state.cart;
+    
   }
 
   createUser= () => {
@@ -53,7 +52,6 @@ class StoreContainer extends React.Component {
     for(let i=0; i< this.state.cart.length; i++){
       totalPrice+= parseFloat(this.state.cart[i].price);
     }
-    console.log("Cart length: ", this.state.cart.length )
     return (
       <div>
         <store title={ this.state.title } />
