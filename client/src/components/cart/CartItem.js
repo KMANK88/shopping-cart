@@ -1,9 +1,6 @@
 import React from 'react';
 
 const styles = {
-  container: {
-    backgroundColor: "red"
-  },
   header: {
     fontSize: '30px'
   }

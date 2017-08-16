@@ -1,5 +1,6 @@
 import React from 'react';
 import {About} from '../../components';
+import './About.css';
 
 class AboutContainer extends React.Component{
 
@@ -22,8 +23,8 @@ class AboutContainer extends React.Component{
       <div>
       {
         this.state.title
-        ? <About title={"this is About Container title"} />
-        : <h1> Waiting for About Title</h1>
+        ? <About title={"About Us."} />
+        : <h1> Loading about page</h1>
       }
       </div>
     )

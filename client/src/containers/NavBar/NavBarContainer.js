@@ -4,7 +4,7 @@ import { NavBar } from '../../components';
 class NavBarContainer extends React.Component {
 
   state = {
-    title: 'Shop Title',
+    title: 'Randoms R Us!',
     navBarLinks: ["Profile","Home", "About" , "Shop"]
   }
 
