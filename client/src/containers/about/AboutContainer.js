@@ -11,6 +11,7 @@ class AboutContainer extends React.Component{
   componentDidMount(){
     this.setTitle();
   }
+  
   setTitle = () =>{
     setTimeout (() => {
       this.setState({title: "About"})
