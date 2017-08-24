@@ -1,38 +1,30 @@
 import React from 'react';
-import {Home} from'../../components';
+import { Home } from'../../components';
 
 class HomeContainer extends React.Component {
+
   state = {
-    title: undefined
-
+    title: null
   }
-
 
   componentDidMount(){
-    this.getTitle();
+    this.setState({ title: "Home Page" });
   }
-
-  getTitle = () => {
-
-    setTimeout(() =>{
-      this.setState({ title: "this is home container's title "})
-    },3000)
-  }
-
-
 
   render(){
-  return(
-    <div>
-    {
-      this.state.title
-      ?<Home title={this.state.title}/>
-      : <h1>No state yet.</h1>
-    }
-    </div>
+    
+    console.log(this.state.title)
 
-    )
+    return(
+        <div>
+          {
+            this.state.title !== null
+            ?<Home title={this.state.title}/>
+            : <h1>No state yet.</h1>
+          }
+        </div>
+      )
   }
 }
 
-export default HomeContainer;
+export default HomeContainer

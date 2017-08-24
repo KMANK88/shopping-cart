@@ -6,10 +6,11 @@ class StoreContainer extends React.Component {
 
   state = {
     title: 'Products',
-    products: undefined,
+    products: null,
     cart: [],
     user: null,
   }
+
   componentDidMount() {
     let tempProducts = [];
     for (var i = 0; i < 10; i++) {
@@ -34,7 +35,7 @@ class StoreContainer extends React.Component {
 
 /* Create a function that removes a product from the cart */
   removeFromCart = (product) => {
-    
+
   }
 
   createUser= () => {
@@ -56,7 +57,7 @@ class StoreContainer extends React.Component {
       <div>
         <store title={ this.state.title } />
         {
-          this.state.products
+          this.state.products !== null
           ? <Layout
           products={ this.state.products }
           addToCart={ this.addToCart }

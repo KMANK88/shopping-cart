@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import {HomeContainer , AboutContainer, StoreContainer} from './containers';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {NavBar} from "./components";
-
-import './App.css';
+import './css/App.css';
 
 class App extends Component {
 
