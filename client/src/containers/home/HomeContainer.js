@@ -4,7 +4,6 @@ import {Home} from'../../components';
 class HomeContainer extends React.Component {
   state = {
     title: undefined
-
   }
 
 
@@ -22,16 +21,17 @@ class HomeContainer extends React.Component {
 
 
   render(){
-  return(
-    <div>
-    {
-      this.state.title
-      ?<Home title={this.state.title}/>
-      : <h1>No state yet.</h1>
-    }
-    </div>
+    console.log(this.state.title)
+    return(
+      <div>
+      {
+        this.state.title
+        ?<Home title={this.state.title}/>
+        : <h1>No state yet.</h1>
+      }
+      </div>
 
-    )
+      )
   }
 }
 

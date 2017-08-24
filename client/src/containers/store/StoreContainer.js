@@ -34,7 +34,7 @@ class StoreContainer extends React.Component {
 
 /* Create a function that removes a product from the cart */
   removeFromCart = (product) => {
-    
+
   }
 
   createUser= () => {
@@ -48,6 +48,7 @@ class StoreContainer extends React.Component {
   }
 
   render () {
+    console.log(this.state.products)
     let totalPrice = 0;
     for(let i=0; i< this.state.cart.length; i++){
       totalPrice+= parseFloat(this.state.cart[i].price);
